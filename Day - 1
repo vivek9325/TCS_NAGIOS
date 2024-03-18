@@ -1,1 +1,8 @@
+ apt-get update
+    8  apt-get install -y autoconf gcc lib6 make wget unzip apache2 php libapache2-mod-php7.4 libgd-dev
+    9  apt-get install -y autoconf gcc libc6 make wget unzip apache2 php libapache2-mod-php7.4 libgd-dev
+   10  clear
+   11  cd /tmp/
+   12  wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.14.tar.gz
+   13  history
 
