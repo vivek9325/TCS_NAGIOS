@@ -20,4 +20,23 @@ Nagios Core Installation Commands
    23  ./configure --with-httpd=conf=/etc/apache2/sites-enabled/
    24  make all
    25  history
+    make install-groups-users
+   29  usermod -a -G nagios www-data
+   30  make install
+   31  make install-commandmode
+   32  make install-config
+   33  make install-webconf
+   34  a2enmod rewrite
+   35  a2enmod cgi
+   36  ufw allow apache
+   37  ufw reload
+   38  htpasswd -c /usr/local/nagios/etc/htpaswd.users nagiosadmin
+   39  sudo service apache2 restart
+   40  sudo systemctl start nagios.service
+   41  sudo systemctl start nagios
+   42  sudo start nagios
+   43  sudo systemctl restart apache2.service
+   44  sudo systemctl start nagios.service
+   45  history
+
 
