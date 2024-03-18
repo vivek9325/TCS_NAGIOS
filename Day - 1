@@ -1,42 +1,25 @@
-Nagios Core Installation Commands 
- 
- 
- apt-get update
-    8  apt-get install -y autoconf gcc lib6 make wget unzip apache2 php libapache2-mod-php7.4 libgd-dev
-    9  apt-get install -y autoconf gcc libc6 make wget unzip apache2 php libapache2-mod-php7.4 libgd-dev
-   10  clear
-   11  cd /tmp/
-   12  wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.14.tar.gz
-   13  history
-   tar xvzf nagioscore.tar.gz
-   15  clear
-   16  ls
-   17  cd nagioscore
-   18  cd nagioscore-nagios-4.4.14/
-   19  ls
-   20  ./configure --with-httpd=conf=/etc/apache2/sites-enabled/
-   21  apt -get install openssl libssl-dev
-   22  apt-get install openssl libssl-dev
-   23  ./configure --with-httpd=conf=/etc/apache2/sites-enabled/
-   24  make all
+1  clear
+    2  sudo apt-get update
+    3  sudo apt-get install -y autoconf gcc libc6 make wget unzip apache2 php libapache2-mod-php7.4 libgd-dev
+    4  sudo apt-get install openssl libssl-dev
+    5  cd /tmp
+    6  wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.14.tar.gz
+    7  tar xzf nagioscore.tar.gz
+    8  ll
+    9  cd nagioscore-nagios-4.4.14/
+   10  sudo ./configure --with-httpd-conf=/etc/apache2/sites-enabled
+   11  sudo make all
+   12  sudo make install-groups-users
+   13  sudo usermod -a -G nagios www-data
+   14  sudo make install
+   15  sudo make install-daemoninit
+   16  sudo make install-commandmode
+   17  sudo make install-config
+   18  sudo make install-webconf
+   19  sudo a2enmod rewrite
+   20  sudo a2enmod cgi
+   21  sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+   22  sudo systemctl restart apache2.service
+   23  sudo systemctl start nagios.service
+   24  clear
    25  history
-    make install-groups-users
-   29  usermod -a -G nagios www-data
-   30  make install
-   31  make install-commandmode
-   32  make install-config
-   33  make install-webconf
-   34  a2enmod rewrite
-   35  a2enmod cgi
-   36  ufw allow apache
-   37  ufw reload
-   38  htpasswd -c /usr/local/nagios/etc/htpaswd.users nagiosadmin
-   39  sudo service apache2 restart
-   40  sudo systemctl start nagios.service
-   41  sudo systemctl start nagios
-   42  sudo start nagios
-   43  sudo systemctl restart apache2.service
-   44  sudo systemctl start nagios.service
-   45  history
-
-
