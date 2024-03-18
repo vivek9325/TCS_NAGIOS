@@ -25,3 +25,21 @@ clear
    23  sudo systemctl start nagios.service
    24  clear
    25  history
+   26  cd ..
+   27  clear
+   28  ls
+   29  wget https://nagios-plugins.org/download/nagios-plugins-2.4.8.tar.gz
+   30  ll
+   31  tar xvzf nagios-plugins-2.4.8.tar.gz
+   32  ls
+   33  clear
+   34  ll
+   35  cd nagios-plugins-2.4.8
+   36  sudo ./tools/setup
+   37  ls
+   38  pwd
+   39  ls -lrt
+   40  sudo ./configure
+   41  make install
+   42  history
+
