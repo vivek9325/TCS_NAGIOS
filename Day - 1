@@ -8,4 +8,16 @@ Nagios Core Installation Commands
    11  cd /tmp/
    12  wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.14.tar.gz
    13  history
+   tar xvzf nagioscore.tar.gz
+   15  clear
+   16  ls
+   17  cd nagioscore
+   18  cd nagioscore-nagios-4.4.14/
+   19  ls
+   20  ./configure --with-httpd=conf=/etc/apache2/sites-enabled/
+   21  apt -get install openssl libssl-dev
+   22  apt-get install openssl libssl-dev
+   23  ./configure --with-httpd=conf=/etc/apache2/sites-enabled/
+   24  make all
+   25  history
 
