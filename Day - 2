@@ -113,7 +113,7 @@ define host {
 }
 
 
-Service ---
+Service for webservice---
 
 
 define service {
