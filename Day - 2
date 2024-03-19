@@ -1,0 +1,20 @@
+Creating template stanza for contact
+
+
+define contact {
+
+        name                            contact-vivek
+        service_notification_period     24x7
+        host_notification_period        24x7
+        host_notification_options       d,r
+        service_notification_options    w,c,r
+        service_notification_commands   notify-service-by-email
+        host_notification_commands      notify-host-by-email
+        host_notifications_enabled      1
+        service_notifications_enabled   1
+        can_submit_commands             1
+        retain_status_information       1
+        retain_nonstatus_information    1
+        register                        0
+}
+
