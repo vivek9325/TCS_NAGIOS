@@ -57,6 +57,8 @@ Host Config in template :-
 
 template.cfg
 
+Linux Host ----
+
 define host {
 
         name                            linux-vivek
@@ -80,6 +82,36 @@ define host {
         notification_period             24x7
         register                        0
 }
+
+
+Windows Host ----
+
+define host {
+
+        name                            windows-vivek
+        check_period                    24x7
+        check_interval                  5
+        retry_interval                  1
+        max_check_attempts              10
+        check_command                   check-host-alive
+        notification_interval           120
+        notification_options            d,u,r
+        contact_groups                  nagiosadmin
+        icon_image                      win40.png
+        statusmap_image                 win40.png
+        action_url                      /pnp4nagios/index.php/graph?host=$HOSTNAME$
+        notifications_enabled           1
+        event_handler_enabled           1
+        flap_detection_enabled          1
+        process_perf_data               1
+        retain_status_information       1
+        retain_nonstatus_information    1
+        notification_period             24x7
+        register                        0
+
+
+}
+
 
 
 
