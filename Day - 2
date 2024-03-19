@@ -18,3 +18,22 @@ define contact {
         register                        0
 }
 
+contact.cfg
+
+
+define contact {
+
+        contact_name            vivek
+        use                     contact-vivek
+        alias                   vivek arora
+        email                   vk@gmail.com
+
+}
+
+define contact {
+
+        contact_name            arora
+        use                     contact-vivek
+        alias                   arora
+        email                   vkarora@gmail.com
+}
