@@ -37,3 +37,12 @@ define contact {
         alias                   arora
         email                   vkarora@gmail.com
 }
+
+define contactgroup {
+
+        contactgroup_name       nagiosadmin
+        alias                   Nagios Admin
+        members                 vivek,arora,nagiosadmin
+
+}
+
