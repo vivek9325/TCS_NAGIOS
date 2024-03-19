@@ -1,5 +1,6 @@
 Creating template stanza for contact
 
+template.cfg
 
 define contact {
 
