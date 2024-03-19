@@ -38,7 +38,6 @@ Installation of nagios plugins on the localhost
    33  clear
    34  ll
    35  cd nagios-plugins-2.4.8
-   36  sudo ./tools/setup
    37  ls
    38  pwd
    39  ls -lrt
