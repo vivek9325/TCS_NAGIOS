@@ -113,5 +113,34 @@ define host {
 }
 
 
+Service ---
 
+
+define service {
+
+        name                            webservice-vivek
+        active_checks_enabled           1
+        passive_checks_enabled          1
+        parallelize_check               1
+        obsess_over_service             1
+        check_freshness                 0
+        notifications_enabled           1
+        event_handler_enabled           1
+        flap_detection_enabled          1
+        flap_detection_options          c
+        process_perf_data               1
+        retain_status_information       1
+        retain_nonstatus_information    1
+        is_volatile                     0
+        check_period                    24x7
+        max_check_attempts              3
+        check_interval                  10
+        retry_interval                  2
+        contact_groups                  nagiosadmin
+        notification_options            c,r
+        notification_interval           120
+        notification_period             24x7
+        register                        0
+
+}
 
