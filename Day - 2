@@ -46,3 +46,4 @@ define contactgroup {
 
 }
 
+Check the status of nagios --- /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
