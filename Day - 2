@@ -174,3 +174,41 @@ define service {
     register                        0
 }
 
+================================================================================================================
+
+
+/usr/local/nagios/etc/servers
+
+
+linux-server.cfg
+
+
+define host {
+
+        use                             linux-vivek
+        host_name                       3.145.182.252
+        alias                           Linux Server
+        address                         3.145.182.252
+
+}
+
+
+define service {
+
+        use                             service-vivek
+        host_name                       3.145.182.252
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+
+}
+
+define service {
+
+        use                             service-vivek
+        host_name                       3.145.182.252
+        service_description             SSH
+        check_command                   check_ssh
+        notification_enabled            0
+
+}
+
