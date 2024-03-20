@@ -144,6 +144,8 @@ define service {
 
 }
 
+Service Stanza in template.cfg -----
+
 define service {
     name                            service-vivek
     active_checks_enabled           1
