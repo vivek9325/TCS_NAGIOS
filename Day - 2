@@ -208,7 +208,6 @@ define service {
         host_name                       3.145.182.252
         service_description             SSH
         check_command                   check_ssh
-        notification_enabled            0
 
 }
 
