@@ -35,3 +35,26 @@ This step installs the binary files, CGIs, and HTML files.
 
 make install
 
+
+Install Service / Daemon
+
+
+make install-daemoninit
+systemctl enable httpd.service
+
+Install Command Mode
+This installs and configures the external command file.
+
+make install-commandmode
+ 
+
+Install Configuration Files
+This installs the *SAMPLE* configuration files. These are required as Nagios needs some configuration files to allow it to start.
+
+make install-config
+ 
+
+Install Apache Config Files
+This installs the Apache web server configuration files. Also configure Apache settings if required.
+
+make install-webconf
