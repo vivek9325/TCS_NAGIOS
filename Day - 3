@@ -5,3 +5,15 @@ NSClient++ Installation Link -
 
 
 https://github.com/mickem/nscp/releases/tag/0.6.0.1
+
+Nagios Core RHEL Installation :-
+
+dnf install -y gcc glibc glibc-common perl httpd php wget gd gd-devel
+dnf install openssl-devel
+dnf update -y
+ 
+ 
+Downloading the Source
+cd /tmp
+wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.14.tar.gz
+tar xzf nagioscore.tar.gz
