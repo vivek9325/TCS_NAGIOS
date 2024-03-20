@@ -103,3 +103,8 @@ define command {
         command_name            check_nrpe
         command_line            $USER1$/check_nrpe -H $HOSTADDRESS$ -t 30 -c $ARG1$ $ARG2$ $ARG3$
 }
+
+
+Validate the config file ---- 
+
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
