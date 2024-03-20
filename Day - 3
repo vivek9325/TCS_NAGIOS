@@ -92,3 +92,14 @@ cd /tmp/nagios-plugins-release-2.4.6/
 ./configure
 make
 make install
+
+========================================================================
+Nsgios Core Server
+
+commands.cfg
+
+define command {
+
+        command_name            check_nrpe
+        command_line            $USER1$/check_nrpe -H $HOSTADDRESS$ -t 30 -c $ARG1$ $ARG2$ $ARG3$
+}
