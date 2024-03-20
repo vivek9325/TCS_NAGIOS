@@ -96,6 +96,8 @@ make install
 ========================================================================
 Nsgios Core Server
 
+/usr/local/nagios/etc/object
+
 commands.cfg
 
 define command {
