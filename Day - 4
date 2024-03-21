@@ -144,3 +144,23 @@ define service {
         check_command           check_nt1!USEDDISKSPACE!-l c -w 90 -c 95
 }
 
+hostgroup.cfg
+
+  GNU nano 5.6.1                                                                                   hostgroup.cfg
+define hostgroup {
+
+        hostgroup_name          windows-servers
+        alias                   Windows Server
+        members                 44.210.122.37
+
+}
+
+
+define hostgroup {
+
+        hostgroup_name          AIX
+        alias                   AIX Servers
+        members                 3.145.182.252
+}
+
+
