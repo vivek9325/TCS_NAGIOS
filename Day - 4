@@ -150,7 +150,7 @@ nagios/etc/servers
 
 hostgroup.cfg
 
-  GNU nano 5.6.1                                                                                   hostgroup.cfg
+  GNU nano 5.6.1      hostgroup.cfg
 define hostgroup {
 
         hostgroup_name          windows-servers
@@ -168,3 +168,4 @@ define hostgroup {
 }
 
 
+URL - https://nagios-plugins.org/doc/man/check_nt.html
