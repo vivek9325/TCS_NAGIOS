@@ -118,3 +118,29 @@ define service {
 
 }
 
+
+define service {
+
+        use                     service-vivek
+        host_name               44.210.122.37
+        service_description     Uptime
+        check_command           check_nt1!UPTIME
+
+}
+
+define service {
+
+        use                     service-vivek
+        host_name               44.210.122.37
+        service_description     CPU Load
+        check_command           check_nt1!CPULOAD!-l 5,90,95
+}
+
+define service {
+
+        use                     service-vivek
+        host_name               44.210.122.37
+        service_description     C:\ Drive Space
+        check_command           check_nt1!USEDISKSPACE!-l c -w 90 -c 95
+}
+
