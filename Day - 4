@@ -69,3 +69,14 @@ CheckSystem = 1
 Command Need to run Nagios Core end -----
 
 ./check_nt -H 3.143.142.199 -p 12489 -s password -v MEMUSE -w 80 -c 90
+
+
+nagios/etc/object
+
+Command.cfg
+
+
+define command{
+        command_name    check_nt1
+        command_line    $USER1$/check_nt -H $HOSTADDRESS$ -p 12489 -s password -v $ARG1$ $ARG2$
+}
