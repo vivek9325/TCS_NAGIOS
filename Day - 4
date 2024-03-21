@@ -80,3 +80,41 @@ define command{
         command_name    check_nt1
         command_line    $USER1$/check_nt -H $HOSTADDRESS$ -p 12489 -s password -v $ARG1$ $ARG2$
 }
+
+
+
+nagios/etc/servers
+
+window-server.cfg
+
+
+define host {
+
+
+        use                     windows-vivek
+        host_name               44.210.122.37
+        alias                   Windows 2022 Server
+        address                 44.210.122.37
+
+}
+
+
+define service {
+
+        use                     service-vivek
+        host_name               44.210.122.37
+        service_description     PING
+        check_command           check_ping!100.0,20%!500.0,60%
+
+}
+
+
+define service {
+
+        use                     service-vivek
+        host_name               44.210.122.37
+        service_description     NSClient++ Version
+        check_command           check_nt1!CLIENTVERSION
+
+}
+
