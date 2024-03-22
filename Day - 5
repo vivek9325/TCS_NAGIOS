@@ -17,3 +17,38 @@ cp /tmp/check_ssl_cert-1.145.0/check_ssl_cert /usr/local/nagios/libexec
 
 
 ./check_ssl_cert -H 172.253.122.101 -w 25 -c 15
+
+
+command.cfg
+
+
+define command{
+        command_name    check_ssl_cert
+        command_line    $USER1$/check_ssl_cert -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$
+}
+
+
+ssl_cert.cfg
+
+
+
+define host {
+
+        use                     windows-vivek
+        host_name               google.com
+        alias                   google.com
+        address                 172.253.62.139
+
+}
+
+define service {
+
+        use                     service-vivek
+        host_name               google.com
+        service_description     google.com ssl status
+        check_command           check_ssl_cert!25!15
+
+}
+
+
+
