@@ -103,7 +103,7 @@ define host {
         use                     generic-host
         host_name               yahoo.com
         alias                   yahoo
-        address                 yahoo
+        address                 yahoo.com
         contacts                nagiosadmin
         contact_groups          admins
 
