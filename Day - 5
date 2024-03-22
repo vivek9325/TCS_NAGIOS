@@ -75,4 +75,49 @@ define service {
 }
 
 
+template.cfg
+
+
+define host {
+
+    name                            generic-host            ; The name of this host template
+    check_interval                  5
+    retry_interval                  1
+    max_check_attempts              10
+    notifications_enabled           1                       ; Host notifications are enabled
+    event_handler_enabled           1                       ; Host event handler is enabled
+    flap_detection_enabled          1                       ; Flap detection is enabled
+    process_perf_data               1                       ; Process performance data
+    retain_status_information       1                       ; Retain status information across program restarts
+    retain_nonstatus_information    1                       ; Retain non-status information across program restarts
+    notification_period             24x7                    ; Send host notifications at any time
+    register                        0                       ; DON'T REGISTER THIS DEFINITION - ITS NOT A REAL HOST, JUST A TEMPLATE!
+}
+
+
+webpage.cfg
+
+
+define host {
+
+        use                     generic-host
+        host_name               yahoo.com
+        alias                   yahoo
+        address                 yahoo
+        contacts                nagiosadmin
+        contact_groups          admins
+
+}
+
+
+define service {
+
+        use                     generic-service
+        host_name               yahoo.com
+        service_description     yahoo.com WebPage Status
+        check_command           check_http!-f follow  -I yahoo.com  --ssl
+        contacts                nagiosadmin
+        contact_groups          admins
+}
+
 
