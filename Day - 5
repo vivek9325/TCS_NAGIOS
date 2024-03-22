@@ -120,4 +120,28 @@ define service {
         contact_groups          admins
 }
 
+=======================================================================================================================================
+
+MYSQL Configure
+
+
+  258  wget https://labs.consol.de/assets/downloads/nagios/check_mysql_health-2.2.2.tar.gz
+  259  ll
+  260  tar xvzf check_mysql_health-2.2.2.tar.gz
+  261  ll
+  262  cd check_mysql_health-2.2.2
+  263  ls
+  264  ./configure
+  265  ls
+  266  cd /usr/local/nagios/libexec/
+  267  clear
+  268  ls
+  269  cd /tmp/
+  270  ll
+  271  cd check_mysql_health-2.2.2
+  272  ls
+  273  ./configure
+  274  history
+
+
 
