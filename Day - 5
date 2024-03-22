@@ -50,5 +50,29 @@ define service {
 
 }
 
+==================================================================================================================================================
+
+WebPage Monitoring
+
+nagios/etc/server/webpage.cfg
+
+define host {
+
+        use                             windows-server
+        host_name                       google.com
+        alias                           google.com WebPage
+        address                         google.com
+}
+
+
+define service {
+
+        use                             service-vivek
+        host_name                       google.com
+        service_description             Webpage Hit
+        check_command                   check_website!-f follow -I google.com --ssl
+
+}
+
 
 
